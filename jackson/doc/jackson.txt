@@ -1,0 +1,27 @@
+
+1) JavaBean中缺少字段，json中含有更多的字段，
+解决方法1: 
+在JavaBean中标注: @JsonIgnoreProperties(ignoreUnknown = true)
+解决方法2: 
+
+
+序列化: 将JavaBean输出json 使用 SerializationConfig SerializationFeature
+反序列化: 读取json为JavaBean 使用 DeserializationConfig DeserializationFeature
+有些特征默认是启动的，要禁用它调用ObjectMapper.disable或ObjectMapper.without方法即可
+或者调用ObjectMapper.configure(Feature, true/false设置)
+
+序列化-属性过滤
+方法1: 在JavaBean指定属性上加@JsonIgnore
+	/**
+	 * 属性标注了@JsonIgnore后，不会参与序列化
+	 */
+	//@JsonIgnore
+方法2: 配合注解@JsonFilter使用
+@JsonFilter("过滤器的id, 全局唯一，每个bean都是不同，直接用bean的全限定名")
+例如: @JsonFilter("com.hua.bean.UserBean") 要在指定的Bean上添加注解，全局有效，
+才能有效使用 JacksonUtil.writeInclude 或 Exclude方法.
+
+
+
+
+

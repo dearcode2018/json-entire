@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.hua</groupId>
+		<artifactId>json-entire</artifactId>
+		<version>0.0.1</version>
+	</parent>	
+	<artifactId>jsonlib</artifactId>
+	<packaging>jar</packaging>
+	<name>jsonlib</name>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+		<json.version>0.0.1</json.version>
+		<!-- 
+		注意要将 json-lib-2.4-jdk15.jar 名称改成 json-lib-2.4.jar 
+		在 D:\repo\net\sf\json-lib\json-lib\2.4 目录下
+		-->
+		<json.lib.version>2.4</json.lib.version>		
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.hua</groupId>
+			<artifactId>json-core</artifactId>
+			<version>${json.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>${json.lib.version}</version>
+		</dependency>
+		
+	</dependencies>
+
+</project>

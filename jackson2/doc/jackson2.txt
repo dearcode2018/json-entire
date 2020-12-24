@@ -1,0 +1,35 @@
+
+jackson2常用对象
+
+JsonGenerator: json生成器，做json各种输出，可以设定输出格式、输出内容等...
+ObjectMapper: 
+ObjectReader: 
+ObjectWriter: 
+JsonSerializer: 
+JsonDeserializer: 
+JsonParser: 
+JsonFactory: 
+JsonPointer: 
+JsonNode: 
+SerializationFeature: 序列化特征
+DeserializationFeature: 反序列化特征
+FilterProvider: 
+TreeNode: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

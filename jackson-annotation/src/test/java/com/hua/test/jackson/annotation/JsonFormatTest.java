@@ -1,0 +1,260 @@
+/**
+ * 描述: 
+ * JsonFormatTest.java
+ * 
+ * @author qye.zheng
+ *  version 1.0
+ */
+package com.hua.test.jackson.annotation;
+
+// 静态导入
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
+import java.util.Date;
+
+import org.junit.Ignore;
+import org.junit.Test;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.hua.entity.JacksonFormatBean;
+import com.hua.test.BaseTest;
+
+
+/**
+ * 描述: 
+ * 
+ * @author qye.zheng
+ * JsonFormatTest
+ */
+public final class JsonFormatTest extends BaseTest {
+
+	/**
+	 * 
+	 * 描述: 
+	 * @author qye.zheng
+	 * 
+	 */
+	@Test
+	public void testFormatToJson() {
+		try {
+			/**
+			 * 序列化，需要给 setter方法标上注解: 
+			 * @JsonSerialize(using = DateSerializer.class)
+			 * @JsonSerialize(using = DateTimeSerializer.class)
+			 */
+			JacksonFormatBean item = new JacksonFormatBean();
+			item.setName("订单1");
+			item.setCredit(0.5);
+			item.setDatetime(new Date());
+			item.setDescription("本次订单有效");
+			
+			/**
+			 * 结果示例:
+				{"name":"订单1","credit":0.5,"description":"本次订单有效","datetime":"2015-03-17 07:16:02"}
+			 */
+			// 序列化为 json
+			String json = objectMapper.writeValueAsString(item);
+			
+			System.out.println(json);
+			
+		} catch (Exception e) {
+			log.error("testFormatToJson =====> ", e);
+		}
+	}
+	
+	/**
+	 * 
+	 * 描述: @JsonFormat(locale = "zh", pattern = "yyyy-MM-dd HH:mm:ss")
+	 * 标注在字段上，而不是setter方法上
+	 * @author qye.zheng
+	 * 
+	 */
+	@Test
+	public void testFormatToJsonOnField() {
+		try {
+			/**
+			 * 序列化，需要给 setter方法标上注解: 
+			 * @JsonSerialize(using = DateSerializer.class)
+			 * @JsonSerialize(using = DateTimeSerializer.class)
+			 */
+			JacksonFormatBean item = new JacksonFormatBean();
+			item.setName("订单1");
+			item.setCredit(0.5);
+			item.setDatetime(new Date());
+			item.setDescription("本次订单有效");
+			
+			/**
+			 * 结果示例:
+				{"name":"订单1","credit":0.5,"description":"本次订单有效","datetime":"2015-03-17 07:16:02"}
+			 */
+			// 序列化为 json
+			String json = objectMapper.writeValueAsString(item);
+			
+			System.out.println(json);
+			
+		} catch (Exception e) {
+			log.error("testFormatToJson =====> ", e);
+		}
+	}	
+	
+	/**
+	 * 
+	 * 描述: 
+	 * @author qye.zheng
+	 * 
+	 */
+	@Test
+	public void testFormatToObject() {
+		try {
+			/**
+			 * 序列化，需要给 setter方法标上注解: 
+			 * @JsonSerialize(using = DateSerializer.class)
+			 * @JsonSerialize(using = DateTimeSerializer.class)
+			 */
+			String json = "{\"name\":\"订单1\",\"credit\":0.5,\"description\":\"本次订单有效\",\"datetime\":\"2015-03-17 07:09:14\"}";
+			JacksonFormatBean formatBean = objectMapper.readValue(json, JacksonFormatBean.class);
+			// 序列化为 json
+			
+			System.out.println(formatBean.toString());
+			
+		} catch (Exception e) {
+			log.error("testFormatToObject =====> ", e);
+		}
+	}
+	
+	/**
+	 * 
+	 * 描述: 
+	 * @author qye.zheng
+	 * 
+	 */
+	@Test
+	public void test() {
+		try {
+			
+			
+		} catch (Exception e) {
+			log.error("test =====> ", e);
+		}
+	}
+	
+	/**
+	 * 
+	 * 描述: 
+	 * @author qye.zheng
+	 * 
+	 */
+	@Test
+	public void testTemp() {
+		try {
+			
+			
+		} catch (Exception e) {
+			log.error("testTemp=====> ", e);
+		}
+	}
+	
+	/**
+	 * 
+	 * 描述: 
+	 * @author qye.zheng
+	 * 
+	 */
+	@Test
+	public void testCommon() {
+		try {
+			
+			
+		} catch (Exception e) {
+			log.error("testCommon =====> ", e);
+		}
+	}
+	
+	/**
+	 * 
+	 * 描述: 
+	 * @author qye.zheng
+	 * 
+	 */
+	@Test
+	public void testSimple() {
+		try {
+			
+			
+		} catch (Exception e) {
+			log.error("testSimple =====> ", e);
+		}
+	}
+	
+	/**
+	 * 
+	 * 描述: 
+	 * @author qye.zheng
+	 * 
+	 */
+	@Test
+	public void testBase() {
+		try {
+			
+			
+		} catch (Exception e) {
+			log.error("testBase =====> ", e);
+		}
+	}
+	
+	/**
+	 * 
+	 * 描述: 解决ide静态导入消除问题 
+	 * @author qye.zheng
+	 * 
+	 */
+	@Ignore("解决ide静态导入消除问题 ")
+	private void noUse() {
+		String expected = null;
+		String actual = null;
+		Object[] expecteds = null;
+		Object[] actuals = null;
+		String message = null;
+		
+		assertEquals(expected, actual);
+		assertEquals(message, expected, actual);
+		assertNotEquals(expected, actual);
+		assertNotEquals(message, expected, actual);
+		
+		assertArrayEquals(expecteds, actuals);
+		assertArrayEquals(message, expecteds, actuals);
+		
+		assertFalse(true);
+		assertTrue(true);
+		assertFalse(message, true);
+		assertTrue(message, true);
+		
+		assertSame(expecteds, actuals);
+		assertNotSame(expecteds, actuals);
+		assertSame(message, expecteds, actuals);
+		assertNotSame(message, expecteds, actuals);
+		
+		assertNull(actuals);
+		assertNotNull(actuals);
+		assertNull(message, actuals);
+		assertNotNull(message, actuals);
+		
+		assertThat(null, null);
+		assertThat(null, null, null);
+		
+		fail();
+		fail("Not yet implemented");
+		
+	}
+
+}

@@ -1,0 +1,40 @@
+
+
+
+序列化
+1) JSONSerializer
+设置日期时间格式: setDateFormat，DateSerializer作为操作实现类
+序列化应该通过JSONSerializer来进行具体设置与操作
+SerializeConfig体现序列化配置
+JSONWriter来实现序列化输出，可以配置 SerializerFeature
+
+2) 字段过滤
+SerializeFilter --> NameFilter
+PropertyFilter 字段过滤器，实现该接口即可，与json-lib相同.
+
+SimplePropertyPreFilter 方式
+    SimplePropertyPreFilter filter = newSimplePropertyPreFilter(China.class, "name");  // 保留该字段
+    String result = JSON.toJSONString(china, filter);  
+
+反序列化
+1) 转换
+JSONObjectDeserializer
+JSONArrayDeserializer
+设置日期时间格式:  DefaultJSONParser.setDateFormat 入口: JSON.DEFFAULT_DATE_FORMAT (修改该public全局变量即可)
+DateDeserializer / DateFormatDeserializer
+转换配置: ParserConfig
+特征: Feature
+2) 接口
+可以反序列化为一个接口，而不仅仅只是一个具体类.
+
+
+
+
+
+
+
+
+
+
+
+

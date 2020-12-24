@@ -1,0 +1,30 @@
+
+
+
+1) JSONCreator
+JSONCreator 在DeserializeBeanInfo中使用到
+JSONCreator 需要搭配JSONField一起使用.
+
+2) JSONField
+JSONField在DeserializeBeanInfo中使用到
+
+
+3) JSONType
+TypeUtils 中使用到JSONType
+序列化、反序列化均使用，可以设置其特征.
+在类型上标注，可以忽略指定的属性，或包含指定的属性.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+
+
+
+
+
+
+1) 支持
+ jackson-annotation / jackson-databind
+
+
+2) Json串包含多余字段问题
+// 设置ignoreUnknown 为true才能解决Json串包含多余字段问题
+@JsonIgnoreProperties(ignoreUnknown = true)
+
+3) 对象转Json串字段过滤
+添加 @Ignore @IgnoreProperites 注解，或在程序中实现过滤器
+
+
+
+
+
+
+
+
+
+
