@@ -1,11 +1,11 @@
 /**
  * 描述: 
- * TemplateTest.java
+ * ObjectToXmlTest.java
  * 
  * @author qye.zheng
  *  version 1.0
  */
-package com.hua.test.jackson.databind;
+package com.hua.test.jackson;
 
 // 静态导入
 import static org.junit.Assert.assertArrayEquals;
@@ -30,9 +30,9 @@ import com.hua.test.BaseTest;
  * 描述: 
  * 
  * @author qye.zheng
- * TemplateTest
+ * ObjectToXmlTest
  */
-public final class TemplateTest extends BaseTest {
+public final class ObjectToXmlTest extends BaseTest {
 
 	/**
 	 * 

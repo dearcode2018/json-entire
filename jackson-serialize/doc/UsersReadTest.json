@@ -1,0 +1,20 @@
+[
+    {
+        "id":"20150627",
+        "username":"张三",
+        "nickname":"少年张三丰",
+        "password":"123456",
+        "valid":true,
+        "lastLoginTime":"2015-07-11 17:06:32",
+        "lastLoginIp":"192.168.5.66"
+    },
+    {
+        "id":"20150629",
+        "username":"李四",
+        "nickname":"四大天王",
+        "password":"012345",
+        "valid":false,
+        "lastLoginTime":"2015-07-11 17:06:32",
+        "lastLoginIp":"192.168.1.36"
+    }
+]

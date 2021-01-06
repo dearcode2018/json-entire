@@ -20,6 +20,7 @@
 		<module>jackson-annotation</module>	
 		<module>jackson2</module>		
 		<module>json-core</module>	
+		<module>jackson-serialize</module>
 		<module>jsonlib</module>		
 		<module>jsonlib2</module>	
 		<module>orgjson</module>		
