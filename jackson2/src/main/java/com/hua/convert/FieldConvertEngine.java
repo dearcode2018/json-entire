@@ -45,7 +45,7 @@ public final class FieldConvertEngine {
      * @author qianye.zheng
      */
     public static final <T> String serialize(final Class<T> clazz, final T target) {
-        return JacksonUtil.writeAsString( getValue(clazz, target));
+        return JacksonUtil.writeAsString(getValue(clazz, target));
     }
     
     /**
@@ -162,8 +162,8 @@ public final class FieldConvertEngine {
             instance = clazz.newInstance();
             final Field[] fields = clazz.getDeclaredFields();
             for (Field field : fields) {
-                final FieldConvert convert = field.getDeclaredAnnotation(FieldConvert.class);
                 field.setAccessible(true);
+                final FieldConvert convert = field.getDeclaredAnnotation(FieldConvert.class);
                 if (null == convert) { // 不使用转换器，直接转换
                     field.set(instance, readValue(field.getType(), map.get(field.getName())));
                 } else {

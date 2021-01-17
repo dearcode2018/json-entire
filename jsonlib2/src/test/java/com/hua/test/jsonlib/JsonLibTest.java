@@ -7,42 +7,75 @@
  */
 package com.hua.test.jsonlib;
 
-// 静态导入
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNotSame;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-import net.sf.json.JSONObject;
+//静态导入
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assumptions.assumeFalse;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
+import static org.junit.jupiter.api.Assumptions.assumingThat;
+import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 
-import com.hua.entity.Course;
-import com.hua.entity.Student;
 import com.hua.test.BaseTest;
+
+import net.sf.json.JSONObject;
 
 
 /**
- * 描述: Json library - 测试
+ * 描述: 
  * 
  * @author qye.zheng
  * JsonLibTest
  */
+//@DisplayName("测试类名称")
+//@Tag("测试类标签")
+//@Tags({@Tag("测试类标签1"), @Tag("测试类标签2")})
 public final class JsonLibTest extends BaseTest {
 
+	
+    /**
+     * 
+     * 描述: 
+     * @author qye.zheng
+     * 
+     */
+    //@DisplayName("test")
+    @Test
+    public void testJsonLib() {
+        try {
+            JSONObject jsonObj = new JSONObject();
+            jsonObj.put("name", "\"[]\"");
+            
+            System.out.println(jsonObj.get("name"));
+            
+            System.out.println(jsonObj.toString());
+            
+        } catch (Exception e) {
+            log.error("test =====> ", e);
+        }
+    }
+	
 	/**
 	 * 
 	 * 描述: 
 	 * @author qye.zheng
 	 * 
 	 */
+	//@DisplayName("test")
 	@Test
 	public void test() {
 		try {
@@ -59,97 +92,7 @@ public final class JsonLibTest extends BaseTest {
 	 * @author qye.zheng
 	 * 
 	 */
-	@Test
-	public void testJsonLib() {
-		try {
-			
-			
-		} catch (Exception e) {
-			log.error("testJsonLib =====> ", e);
-		}
-	}
-	
-	/**
-	 * 
-	 * 描述: json字符串转成对象
-	 * @author qye.zheng
-	 * 
-	 */
-	@Test
-	public void testToObject() {
-		try {
-			
-			
-			/*String json = "{\"address\": \"陕西省凌云县风雷震风云路120号\",  \"credit\": 47.8,  "
-					+ "\"name\": \"王三春\",  \"oid\": 2008, \"sex\": true,  \"birthday\": \"Jul 28, 1981 12:00:00 AM\"}";*/
-			final String json = "{\"address\": \"陕西省凌云县风雷震风云路120号\",  \"credit\": 47.8,  "
-					+ "\"name\": \"王三春\",  \"oid\": 2008, \"sex\": true,  \"birthday\": \"1988-07-01 13:30:34\"}";
-			
-			
-			// 设置日期时间格式
-			Student stu = null;
-			
-			log.info("testToObject =====> name = " + stu.getName());
-			log.info("testToObject =====> oid = " + stu.getOid());
-			log.info("testToObject =====> sex = " + stu.isSex());
-			log.info("testToObject =====> birthday = " + stu.getBirthday());
-			
-		} catch (Exception e) {
-			log.error("testToObject =====> ", e);
-		}
-	}
-	
-	/**
-	 * 
-	 * 描述: 对象转成 json 字符串
-	 * @author qye.zheng
-	 * 
-	 */
-	@Test
-	public void testToJson() {
-		try {
-			final Student stu = new Student();
-			stu.setOid(2008L);
-			stu.setName("王三春");
-			stu.setBirthday(dateFormat.parse("1981-07-28"));
-			stu.setAddress("陕西省凌云县风雷震风云路120号");
-			stu.setCredit(Double.valueOf(47.8));
-			stu.setSex(true);
-			
-			Course c = new Course();
-			c.setName("高等数学");
-			c.setDescription("大学数学课程");
-			c.setCredit(Double.valueOf(5.0));
-			stu.addCourse(c);
-			
-			c = new Course();
-			c.setName("高等语文");
-			c.setDescription("大学语文课程");
-			c.setCredit(Double.valueOf(4.5));
-			stu.addCourse(c);
-			
-			c = new Course();
-			c.setName("政治与哲学");
-			c.setDescription("大学政治课程");
-			c.setCredit(Double.valueOf(4.0));
-			stu.addCourse(c);
-			
-			initJsonObject(stu);
-			
-			String json = jsonObject.toString();
-			log.info("testToJson =====> json --> " + json);
-			
-		} catch (Exception e) {
-			log.error("testToJson =====> ", e);
-		}
-	}	
-	
-	/**
-	 * 
-	 * 描述: 
-	 * @author qye.zheng
-	 * 
-	 */
+	@DisplayName("testTemp")
 	@Test
 	public void testTemp() {
 		try {
@@ -166,6 +109,7 @@ public final class JsonLibTest extends BaseTest {
 	 * @author qye.zheng
 	 * 
 	 */
+	@DisplayName("testCommon")
 	@Test
 	public void testCommon() {
 		try {
@@ -182,6 +126,7 @@ public final class JsonLibTest extends BaseTest {
 	 * @author qye.zheng
 	 * 
 	 */
+	@DisplayName("testSimple")
 	@Test
 	public void testSimple() {
 		try {
@@ -198,6 +143,7 @@ public final class JsonLibTest extends BaseTest {
 	 * @author qye.zheng
 	 * 
 	 */
+	@DisplayName("testBase")
 	@Test
 	public void testBase() {
 		try {
@@ -210,11 +156,51 @@ public final class JsonLibTest extends BaseTest {
 	
 	/**
 	 * 
+	 * 描述: [每个测试-方法]开始之前运行
+	 * @author qye.zheng
+	 * 
+	 */
+	@DisplayName("beforeMethod")
+	@Tag(" [每个测试-方法]结束之后运行")
+	@BeforeEach
+	public void beforeMethod() {
+		System.out.println("beforeMethod()");
+	}
+	
+	/**
+	 * 
+	 * 描述: [每个测试-方法]结束之后运行
+	 * @author qye.zheng
+	 * 
+	 */
+	@DisplayName("afterMethod")
+	@Tag(" [每个测试-方法]结束之后运行")
+	@AfterEach
+	public void afterMethod() {
+		System.out.println("afterMethod()");
+	}
+	
+	/**
+	 * 
+	 * 描述: 测试忽略的方法
+	 * @author qye.zheng
+	 * 
+	 */
+	@Disabled
+	@DisplayName("ignoreMethod")
+	@Test
+	public void ignoreMethod() {
+		System.out.println("ignoreMethod()");
+	}
+	
+	/**
+	 * 
 	 * 描述: 解决ide静态导入消除问题 
 	 * @author qye.zheng
 	 * 
 	 */
-	@Ignore("解决ide静态导入消除问题 ")
+	@DisplayName("noUse")
+	@Disabled("解决ide静态导入消除问题 ")
 	private void noUse() {
 		String expected = null;
 		String actual = null;
@@ -228,43 +214,31 @@ public final class JsonLibTest extends BaseTest {
 		assertNotEquals(message, expected, actual);
 		
 		assertArrayEquals(expecteds, actuals);
-		assertArrayEquals(message, expecteds, actuals);
+		assertArrayEquals(expecteds, actuals, message);
 		
 		assertFalse(true);
 		assertTrue(true);
-		assertFalse(message, true);
-		assertTrue(message, true);
+		assertFalse(true, message);
+		assertTrue(true, message);
 		
 		assertSame(expecteds, actuals);
 		assertNotSame(expecteds, actuals);
-		assertSame(message, expecteds, actuals);
-		assertNotSame(message, expecteds, actuals);
+		assertSame(expecteds, actuals, message);
+		assertNotSame(expecteds, actuals, message);
 		
 		assertNull(actuals);
 		assertNotNull(actuals);
-		assertNull(message, actuals);
-		assertNotNull(message, actuals);
-		
-		assertThat(null, null);
-		assertThat(null, null, null);
+		assertNull(actuals, message);
+		assertNotNull(actuals, message);
 		
 		fail();
 		fail("Not yet implemented");
 		
+		dynamicTest(null, null);
+		
+		assumeFalse(false);
+		assumeTrue(true);
+		assumingThat(true, null);
 	}
 
-	/**
-	 * 
-	 * 描述: 
-	 * @author qye.zheng
-	 * 
-	 * @param object
-	 * @return
-	 */
-	public JSONObject initJsonObject(final Object object) {
-		jsonObject = JSONObject.fromObject(object);
-		
-		return jsonObject;
-	}
-	
 }

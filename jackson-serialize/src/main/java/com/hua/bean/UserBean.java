@@ -10,7 +10,6 @@ package com.hua.bean;
 import java.util.Date;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonFilter;
 import com.hua.constant.sys.UserType;
 
 /**

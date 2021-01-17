@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.hua</groupId>
 		<artifactId>json-entire</artifactId>
-		<version>0.0.1</version>
+		<version>1.0.0</version>
 	</parent>	
 	<artifactId>jsonlib</artifactId>
 	<packaging>jar</packaging>
@@ -12,7 +12,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		
-		<json.version>0.0.1</json.version>
+		<json.version>1.0.0</json.version>
 		<!-- 
 		注意要将 json-lib-2.4-jdk15.jar 名称改成 json-lib-2.4.jar 
 		在 D:\repo\net\sf\json-lib\json-lib\2.4 目录下

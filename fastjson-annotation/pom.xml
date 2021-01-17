@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.hua</groupId>
 		<artifactId>json-entire</artifactId>
-		<version>0.0.1</version>
+		<version>1.0.0</version>
 	</parent>	
 	<artifactId>fastjson-annotation</artifactId>
 	<packaging>jar</packaging>
@@ -12,7 +12,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		
-		<fastjson.version>0.0.1</fastjson.version>
+		<fastjson.version>1.0.0</fastjson.version>
 	</properties>
 
 	<dependencies>

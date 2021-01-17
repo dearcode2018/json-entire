@@ -40,7 +40,7 @@ public class BaseTest extends BaseLog {
    public static final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     
     public static final DateFormat dateTimeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	
+    
     public static GsonBuilder gsonBuilder = new GsonBuilder();
     
     public static Gson gson = new Gson();
@@ -56,8 +56,7 @@ public class BaseTest extends BaseLog {
     
     protected JSONObject jsonObject;
     
-    protected String json;
-    
+    protected String json;   
     
 	/**
 	 * 
