@@ -45,7 +45,7 @@ public final class FieldConvertEngine {
      * @author qianye.zheng
      */
     public static final <T> String serialize(final Class<T> clazz, final T target) {
-        return JacksonUtil.writeAsString( getValue(clazz, target));
+        return JacksonUtil.writeAsString(getValue(clazz, target));
     }
     
     /**
