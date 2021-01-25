@@ -10,24 +10,18 @@
 	<packaging>jar</packaging>
 	<name>orgjson</name>
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		
-		<json.version>1.0.0</json.version>
-		<org.json.version>20141113</org.json.version>
+
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.hua</groupId>
 			<artifactId>json-core</artifactId>
-			<version>${json.version}</version>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>${org.json.version}</version>
 		</dependency>		
 	</dependencies>
 

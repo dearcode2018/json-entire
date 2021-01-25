@@ -24,6 +24,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.hua.log.BaseLog;
 
+import net.sf.json.JSONObject;
+
 /**
  * 描述: 测试基类
  * 包含多个测试示例
@@ -38,7 +40,7 @@ public class BaseTest extends BaseLog {
    public static final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     
     public static final DateFormat dateTimeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	
+    
     public static GsonBuilder gsonBuilder = new GsonBuilder();
     
     public static Gson gson = new Gson();
@@ -51,6 +53,10 @@ public class BaseTest extends BaseLog {
     public static ObjectReader objectReader = objectMapper.reader();
     
     public static ObjectWriter objectWriter = objectMapper.writer();    
+    
+    protected JSONObject jsonObject;
+    
+    protected String json;   
     
 	/**
 	 * 

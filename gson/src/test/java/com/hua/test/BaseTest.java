@@ -16,6 +16,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.hua.log.BaseLog;
 
 /**
@@ -32,7 +34,11 @@ public class BaseTest extends BaseLog {
    public static final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     
     public static final DateFormat dateTimeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	
+
+    public static GsonBuilder gsonBuilder = new GsonBuilder();
+    
+    public static Gson gson = new Gson();    
+    
 	/**
 	 * 
 	 * 描述: [所有测试]开始之前运行

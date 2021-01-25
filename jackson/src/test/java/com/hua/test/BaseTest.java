@@ -16,6 +16,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectReader;
+import com.fasterxml.jackson.databind.ObjectWriter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.hua.log.BaseLog;
@@ -38,6 +42,15 @@ public class BaseTest extends BaseLog {
     public static GsonBuilder gsonBuilder = new GsonBuilder();
     
     public static Gson gson = new Gson();
+    
+    public static JsonGenerator jsonGenerator = null;
+    
+    /* 共用 对象映射器 */
+    public static ObjectMapper objectMapper = new ObjectMapper();
+    
+    public static ObjectReader objectReader = objectMapper.reader();
+    
+    public static ObjectWriter objectWriter = objectMapper.writer();    
     
 	/**
 	 * 

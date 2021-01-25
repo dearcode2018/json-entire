@@ -10,26 +10,17 @@
 	<packaging>jar</packaging>
 	<name>jsonlib</name>
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		
-		<json.version>1.0.0</json.version>
-		<!-- 
-		注意要将 json-lib-2.4-jdk15.jar 名称改成 json-lib-2.4.jar 
-		在 D:\repo\net\sf\json-lib\json-lib\2.4 目录下
-		-->
-		<json.lib.version>2.4</json.lib.version>		
+
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.hua</groupId>
 			<artifactId>json-core</artifactId>
-			<version>${json.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>net.sf.json-lib</groupId>
 			<artifactId>json-lib</artifactId>
-			<version>${json.lib.version}</version>
 		</dependency>
 		
 	</dependencies>

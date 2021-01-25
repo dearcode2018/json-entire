@@ -11,16 +11,13 @@
 	<packaging>jar</packaging>
 	<name>json-template</name>
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		
-		<json.version>1.0.0</json.version>
+	
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.hua</groupId>
 			<artifactId>json-core</artifactId>
-			<version>${json.version}</version>
 		</dependency>
 		
 	</dependencies>

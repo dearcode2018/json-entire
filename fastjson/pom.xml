@@ -10,23 +10,18 @@
 	<packaging>jar</packaging>
 	<name>fastjson</name>
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		
-		<json.version>1.0.0</json.version>
-		<fastjson.version>1.2.4</fastjson.version>
+
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.hua</groupId>
 			<artifactId>json-core</artifactId>
-			<version>${json.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>${fastjson.version}</version>
 		</dependency>
 		
 	</dependencies>

@@ -47,6 +47,8 @@ public final class User extends BaseBean {
 	/* 上一次登录-时间 */
 	private Date lastLoginTime;
 	
+	private java.sql.Date sqlDate;
+	
 	/* 上一次登录-IP地址 */
 	private String lastLoginIp;
 	
@@ -157,5 +159,18 @@ public final class User extends BaseBean {
 		this.valid = valid;
 	}
 
-	
+	/**
+	 * @return the sqlDate
+	 */
+	public final java.sql.Date getSqlDate() {
+		return sqlDate;
+	}
+
+	/**
+	 * @param sqlDate the sqlDate to set
+	 */
+	public final void setSqlDate(java.sql.Date sqlDate) {
+		this.sqlDate = sqlDate;
+	}
+
 }
